@@ -4,7 +4,7 @@ BASE_URL = "http://5.181.109.28:9090/api/v3" #путь из сваггера, о
 
 @allure.feature("Pet")
 class TestPet:
-    allure.title("Попытка удалить несуществующего питомца")
+    @allure.title("Попытка удалить несуществующего питомца")
     def test_delete_nonexistent_pet(self):
         with allure.step("Отправка запроса на удаление несуществующего питомца"):
             response = requests.delete(url=f'{BASE_URL}/pet/9999')
