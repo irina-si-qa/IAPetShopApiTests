@@ -52,9 +52,9 @@ class TestPet:
             assert response.status_code == 200, "Статус-код ответа не совпадает с ожидаемым"
             jsonschema.validate(response_json, PET_SCHEMA)
         with allure.step("Проверка параметров питомца в ответе"):
-            assert response_json['id'] == payload['id']
-            assert response_json['name'] == payload['name']
-            assert response_json['status'] == payload['status']
+            assert response_json['id'] == payload['id'], "id питомца не совпадает с ожидаемым"
+            assert response_json['name'] == payload['name'], "name питомца не совпадает с ожидаемым"
+            assert response_json['status'] == payload['status'], "status питомца не совпадает с ожидаемым"
 
 #домашнее задание к уроку 3
     @allure.title("Добавление нового питомца с полными данными")
@@ -75,9 +75,9 @@ class TestPet:
             assert response.status_code == 200, "Статус-код ответа не совпадает с ожидаемым"
             jsonschema.validate(response_json, PET_SCHEMA)
         with allure.step("Проверка параметров питомца в ответе"):
-            assert response_json['id'] == payload['id']
-            assert response_json['name'] == payload['name']
-            assert response_json['category'] == payload['category']
-            assert response_json['photoUrls'] == payload['photoUrls']
-            assert response_json['tags'] == payload['tags']
-            assert response_json['status'] == payload['status']
+            assert response_json['id'] == payload['id'], "id питомца не совпадает с ожидаемым"
+            assert response_json['name'] == payload['name'], "name питомца не совпадает с ожидаемым"
+            assert response_json['category'] == payload['category'], "category питомца не совпадает с ожидаемым"
+            assert response_json['photoUrls'] == payload['photoUrls'], "photoUrls питомца не совпадает с ожидаемым"
+            assert response_json['tags'] == payload['tags'], "tags питомца не совпадает с ожидаемым"
+            assert response_json['status'] == payload['status'], "status питомца не совпадает с ожидаемым"
